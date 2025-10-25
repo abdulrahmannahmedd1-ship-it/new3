@@ -1,3 +1,5 @@
+require('dotenv').config({ path: './sec.env' })
+
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
@@ -20,8 +22,8 @@ app.get('/', (req, res) => {
     })
 })
 
-mongoose.connect("mongodb+srv://devyousryy712_db_user:ZT1afbCtOF04ruhl@cluster1.hyl2yuk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
-).then(() => {
+mongoose.connect(process.env.MONGO_URI)
+.then(() => {
   app.listen(port, () => {
     console.log(`http://localhost:${port}`);
   });
