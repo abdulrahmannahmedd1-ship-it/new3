@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Department Selector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1><strong>Welcome To Faculty Of Computer Science&AI 
+        ││Sohag University││
+    <br>Department Selector    
+    </strong></h1>  
+<!-- Developed By JuniorBackendDevyousryyy -->
+       <form action="/views/index.ejs" method="post">
+        <input type="text" placeholder="First Name" name="FirstName">
+        <input type="text" placeholder="Last Name" name="LastName">
+        <input type="text" placeholder="E-mail" name="email">
+        <input type="text" placeholder="Department" name="Department">
+        <br>
+        <button>Send My Data</button>
+    </form>
+     <h2 class="table-title">this Is a list of All Registered Students
+        and their Departments
+</h2>
+     <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                 <th>E-mail</th>
+                 <th>Department he've Chosen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% arr.forEach(item => { %>
+             <tr>
+        <td><%= item.FirstName %> <%= item.LastName %></td>
+        <td><%= item.email %></td>
+        <td><%= item.Department %></td>
+    </tr>
+            <% }) %>
+            <tr>
+                <td></td>
+            </tr>
+            <tbody>
+    
+</tbody>
+
+        </tbody>
+     </table>
+</body>
+
+</html>
+
